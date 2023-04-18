@@ -1,19 +1,33 @@
 .register {
-  height: 100vh;
+  /* height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
+  width: 400px;
+  border: 2px solid #0071c2;
+  margin: 200px auto;
+  padding: 16px;
+  background-color: #dbeefb;
 }
 
 .rContainer {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;
+  background-color: #dbeefb;
+}
+
+.register-heading {
+  font-size: 26px;
+  font-weight: 500;
+  color: #0071c2;
+  margin-bottom: 28px;
 }
 
 .rInput {
   height: 30px;
-  padding: 10px;
+  padding: 6px;
+  border-radius: 4px;
 }
 
 .rButton {

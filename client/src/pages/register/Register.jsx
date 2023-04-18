@@ -48,6 +48,7 @@ const Register = () => {
   return (
     <div className="register">
       <div className="rContainer">
+        <p className="register-heading">Register to create an account</p>
         <input type="text" placeholder="username" id="username" onChange={handleChange} className="rInput" />
         <input type="email" placeholder="Email" id="email" onChange={handleChange} className="rInput" />
         <input type="text" placeholder="Country" id="country" onChange={handleChange} className="rInput" />
@@ -62,6 +63,7 @@ const Register = () => {
         <button onClick={handleClick} className="rButton">
           Register
         </button>
+        <a href="login">login here</a>
         {/* {error && <span>{error.message}</span>} */}
       </div>
     </div>

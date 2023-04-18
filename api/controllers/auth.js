@@ -24,17 +24,10 @@ export const login = async (req, res, next) => {
     const user = await User.findOne({ username: req.body.username });
     if (!user) return next(createError(404, "User not found!"));
 
-    const isPasswordCorrect = await bcrypt.compare(
-      req.body.password,
-      user.password
-    );
-    if (!isPasswordCorrect)
-      return next(createError(400, "Wrong password or username!"));
+    const isPasswordCorrect = await bcrypt.compare(req.body.password, user.password);
+    if (!isPasswordCorrect) return next(createError(400, "Wrong password or username!"));
 
-    const token = jwt.sign(
-      { id: user._id, isAdmin: user.isAdmin },
-      process.env.JWT
-    );
+    const token = jwt.sign({ id: user._id, isAdmin: user.isAdmin }, process.env.JWT);
 
     const { password, isAdmin, ...otherDetails } = user._doc;
     res
@@ -45,5 +38,31 @@ export const login = async (req, res, next) => {
       .json({ details: { ...otherDetails }, isAdmin });
   } catch (err) {
     next(err);
+  }
+};
+
+// export const logout = async (req, res, next) => {
+// req.user.deleteToken(req.access_token, (err, user) => {
+//   if (err) return res.status(400).send(err);
+//   res.sendStatus(200);
+// });
+// res
+//   .cookie("access_token", "loggedout", {
+//     expires: new Date(Date.now() + 10000),
+//     httpOnly: true,
+//   })
+//   .status(200)
+//   .json({ status: "success" });
+// next();
+// };
+
+export const logout = async (req, res) => {
+  try {
+    res.clearCookie("access_token");
+    console.log("logout successfully");
+    await req.user.save();
+    res.render("login");
+  } catch (error) {
+    res.status(500).send(error);
   }
 };

@@ -30,6 +30,14 @@ app.use(cookieParser());
 // express.json() method is used because we can't send json object by post method by default.
 app.use(express.json());
 
+// app.get("/logout", async (req, res, next) => {
+//   try {
+//     console.log("logout successfully");
+//   } catch (error) {
+//     res.status(500).send(error);
+//   }
+//   next();
+// });
 app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
 app.use("/api/hotels", hotelsRoute);

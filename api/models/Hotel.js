@@ -50,3 +50,15 @@ const HotelSchema = new mongoose.Schema({
 });
 
 export default mongoose.model("Hotel", HotelSchema);
+
+//hotel name
+//  type will be hotel apartment resort villa cabins
+//  city anything
+// address any address
+//  distance any thing between 50 to 1000
+//  photos any real working link
+// title something related to hotel
+// description description of hotel about 200 words
+// rating 0-5
+// rooms between (100 - 110)
+//  cheapestPrice

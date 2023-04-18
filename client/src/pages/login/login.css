@@ -1,19 +1,33 @@
 .login {
-  height: 100vh;
+  /* height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
+  width: 400px;
+  border: 2px solid #0071c2;
+  margin: 200px auto;
+  padding: 16px;
+  background-color: #dbeefb;
 }
 
 .lContainer {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;
+  background-color: #dbeefb;
 }
 
-.lInput{
+.login-heading {
+  font-size: 26px;
+  font-weight: 500;
+  color: #0071c2;
+  margin-bottom: 28px;
+}
+
+.lInput {
   height: 30px;
   padding: 10px;
+  border-radius: 4px;
 }
 
 .lButton {
@@ -26,7 +40,7 @@
   border-radius: 5px;
 }
 
-.lButton:disabled{
+.lButton:disabled {
   background-color: #0071c28c;
   cursor: not-allowed;
 }

@@ -1,4 +1,5 @@
 import useFetch from "../../hooks/useFetch";
+import { Link } from "react-router-dom";
 import "./featured.css";
 
 const Featured = () => {
@@ -10,13 +11,15 @@ const Featured = () => {
         "Loading please wait"
       ) : (
         <>
-          <div className="featuredItem">
-            <img src="https://marathon.in/wp-content/uploads/2022/05/blog_header-07-scaled.jpg" alt="" className="featuredImg" />
-            <div className="featuredTitles">
-              <h1>Mumbai</h1>
-              <h2>{data[0]} properties</h2>
+          <Link to="/hotels">
+            <div className="featuredItem">
+              <img src="https://marathon.in/wp-content/uploads/2022/05/blog_header-07-scaled.jpg" alt="" className="featuredImg" />
+              <div className="featuredTitles">
+                <h1>Mumbai</h1>
+                <h2>{data[0]} properties</h2>
+              </div>
             </div>
-          </div>
+          </Link>
           <div className="featuredItem">
             <img
               src="https://i1.wp.com/buddybits.com/wp-content/uploads/2016/01/10-Reasons-Why-Surat-is-the-Best-City-to-Live-In.jpg?fit=630%2C400&ssl=1"

@@ -13,8 +13,9 @@ const Home = () => {
       <Navbar />
       <Header />
       <div className="homeContainer">
+        <h1 className="homeTitle">Our Top Destinations</h1>
         <Featured />
-        <h1 className="homeTitle">Collection of Hotels(Browse by destinations)</h1>
+        <h1 className="homeTitle">List of Properties</h1>
         <PropertyList />
         <h1 className="homeTitle">Our Hotel Chains</h1>
         <FeaturedProperties />

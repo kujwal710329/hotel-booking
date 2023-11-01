@@ -10,6 +10,7 @@ import useFetch from "../../hooks/useFetch";
 
 const List = () => {
   const location = useLocation();
+  console.log(location);
   const [destination, setDestination] = useState(location.state.destination);
   const [dates, setDates] = useState(location.state.dates);
   const [openDate, setOpenDate] = useState(false);
@@ -18,6 +19,7 @@ const List = () => {
   const [max, setMax] = useState(undefined);
 
   //&min=${min || 0 }&max=${max || 999}
+  console.log(destination);
   const { data, loading, error, reFetch } = useFetch(`/hotels?city=${destination}&min=${min || 0}&max=${max || 999}`);
 
   const handleClick = () => {
